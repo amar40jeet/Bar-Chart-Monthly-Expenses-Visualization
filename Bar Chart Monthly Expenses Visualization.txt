@@ -1,0 +1,21 @@
+import matplotlib.pyplot as plt
+
+# Get user input
+categories = input("Enter the expense categories (comma-separated): ").split(',')
+values = list(map(float, input("Enter the values for each category (comma-separated): ").split(',')))
+
+# Ensure the number of categories matches the number of values
+if len(categories) != len(values):
+    print("The number of categories must match the number of values.")
+else:
+    # Create the bar chart
+    plt.figure(figsize=(10, 6))
+    plt.bar(categories, values, color='skyblue')
+
+    # Add title and labels
+    plt.title("Monthly Expenses")
+    plt.xlabel("Categories")
+    plt.ylabel("Amount ($)")
+
+    # Display the bar chart
+    plt.show()
